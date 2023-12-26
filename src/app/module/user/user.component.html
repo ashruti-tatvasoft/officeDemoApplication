@@ -1,0 +1,48 @@
+<div class="main">
+  <div>
+    <h3>User</h3>
+  </div>
+  <div class="employee-wrapper" >
+    <mat-card class="product-box">
+      <form class="example-form" [formGroup]="submitForm">
+        <mat-card-content>
+          <div>
+            <mat-form-field class="example-full-width">
+              <mat-label>Enter User Name</mat-label>
+              <input matInput formControlName="username" placeholder="Enter User Name" name='username'  class="inputName"/>
+            </mat-form-field>
+            <div *ngIf=" submitFormData && ctrl.username.errors">
+              <mat-error  *ngIf="ctrl.username.errors" class="error-class">{{ "This field is required" }}</mat-error>
+            </div>
+          </div>
+          <div>
+            <mat-form-field class="example-full-width">
+              <mat-label>Enter Address</mat-label>
+              <input matInput formControlName="address" placeholder="Enter Address" name='address' class="inputName"/>
+            </mat-form-field>
+            <div *ngIf="submitFormData && ctrl.address.errors">
+              <mat-error *ngIf="ctrl.address.errors" class="error-class">{{ "This field is required" }}</mat-error>
+            </div>
+          </div>
+          <!-- <br> -->
+        </mat-card-content>
+        <button mat-stroked-button type='submit' color="accent" class="btn-block" (click)="submit()">
+          Submit
+        </button>
+        <!-- <button mat-stroked-button type='submit' color="accent" class="btn-block" (click)="Percentage()">
+          Percentage
+        </button> -->
+      </form>
+      <div *ngIf="userData.length > 0">
+        <table>
+            <th> Name </th>
+            <th> Address </th>
+            <tr *ngFor="let row of userData">
+              <td> {{row.name}}</td>
+              <td> {{row.address}} </td>
+            </tr>
+        </table>
+      </div>
+    </mat-card>
+  </div>
+</div>

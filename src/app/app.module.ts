@@ -5,18 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './module/home/home.component';
 import { SharedModule } from './module/shared/shared.module';
-import { AboutComponent } from './module/about/about.component';
-import { ContactComponent } from './module/contact/contact.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserComponent } from './module/user/user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent,
-    ContactComponent
-  ],
+    UserComponent
+    ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
