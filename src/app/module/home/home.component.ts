@@ -16,8 +16,8 @@ export class HomeComponent {
   answer = 0;
   submitFormData:boolean = false
   submitForm = new FormGroup<FormType>({
-    number1: new FormControl<number>(0,Validators.required),
-    number2: new FormControl<number>(0,Validators.required)
+    number1: new FormControl<number| null>(null, Validators.required),
+    number2: new FormControl<number| null>(null, Validators.required)
   });
   
   get ctrl(): FormType { return this.submitForm.controls; }

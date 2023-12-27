@@ -1,48 +1,57 @@
-<div class="main">
-  <div>
-    <h3>Calculator</h3>
-  </div>
-  <div class="employee-wrapper" >
+<div class="form-wrapper">
+  <div class="employee-wrapper">
     <mat-card class="product-box">
-      <form class="example-form" [formGroup]="submitForm">
-        <mat-card-content>
-          <div>
-            <mat-form-field class="example-full-width">
+      <form [formGroup]="submitForm">
+        <mat-card-content class="form-group-wrapper">
+          <div class="form-control">
+            <mat-form-field class="example-full-width" appearance="fill">
               <mat-label>Enter First Value</mat-label>
-              <input matInput formControlName="number1" placeholder="Enter First Value" name='number1'  class="inputName"/>
+              <input matInput formControlName="number1" placeholder="Number 1" name='number1'  class="inputName"/>
             </mat-form-field>
             <div *ngIf=" submitFormData && ctrl.number1.errors">
               <mat-error  *ngIf="ctrl.number1.errors" class="error-class">{{ "This field is required" }}</mat-error>
             </div>
           </div>
-          <div>
-            <mat-form-field class="example-full-width">
+          <div class="form-control">
+            <mat-form-field class="example-full-width" appearance="fill">
               <mat-label>Enter Second Value</mat-label>
-              <input matInput formControlName="number2" placeholder="Enter Second Value" name='number2' class="inputName"/>
+              <input matInput formControlName="number2" placeholder="Number 2" name='number2' class="inputName"/>
             </mat-form-field>
             <div *ngIf="submitFormData && ctrl.number2.errors">
               <mat-error *ngIf="ctrl.number2.errors" class="error-class">{{ "This field is required" }}</mat-error>
             </div>
           </div>
-          <!-- <br> -->
         </mat-card-content>
-        <button mat-stroked-button type='submit' color="accent" class="btn-block" (click)="Addition()">
-          Addition
-        </button>
-        <button mat-stroked-button type='submit' color="accent" class="btn-block" (click)="Subtraction()">
-          Subtraction
-        </button>
-        <button mat-stroked-button type='submit' color="accent" class="btn-block" (click)="Multiplication()">
-          Multiplication
-        </button>
-        <button mat-stroked-button type='submit' color="accent" class="btn-block" (click)="Division()">
-          Division
-        </button>
-        <!-- <button mat-stroked-button type='submit' color="accent" class="btn-block" (click)="Percentage()">
-          Percentage
-        </button> -->
+        <div class="btn-wrapper">
+            <div class="btn-wrapper-inner">
+              <button mat-stroked-button type='submit' color="accent" class="red-btn" (click)="Addition()">
+                Add
+              </button>
+            </div>
+           <div class="btn-wrapper-inner">
+                <button mat-stroked-button type='submit' color="accent" class="red-btn" (click)="Subtraction()">
+                  Subtract
+                </button>
+            </div>
+             <div class="btn-wrapper-inner">
+                <button mat-stroked-button type='submit' color="accent" class="red-btn" (click)="Multiplication()">
+                  Multiply
+                </button>
+            </div>
+             <div class="btn-wrapper-inner">
+                <button mat-stroked-button type='submit' color="accent" class="red-btn" (click)="Division()">
+                  Divide
+                </button>
+            </div>
+             <!-- <div class="btn-wrapper-inner">
+                <button mat-stroked-button type='submit' color="accent" class="red-btn" (click)="Percentage()">
+                Percentage
+                </button>
+            </div> -->
+         
+        </div>
       </form>
-      <strong style="margin-top: 20px;"> Answer is: {{answer}}</strong>
+      <div class="calc-answer"> Answer is: {{answer}}</div>
     </mat-card>
   </div>
 </div>
