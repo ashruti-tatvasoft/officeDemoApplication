@@ -32,5 +32,6 @@ export class UserComponent {
         address: this.ctrl.address.value
       })
     }
+    this.submitForm.reset();
   }
 }
